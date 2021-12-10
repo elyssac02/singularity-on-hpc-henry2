@@ -61,4 +61,14 @@ module load singularity
 singularity build image-modified.sif docker-archive://image-modified.tar
 ```
 
+## Deploying a Singularity container on Henry2
+All containers must be run in sif queue, or they won't work. That is because Singularity requires some information to be written to local disk (scratch on the compute node), and sif queue includes only appropriately 'formatted' nodes. Note...that means you may accidentally request a node with resources not found in the sif queue.  
 
+Currently, the sif queue contains:  
+cores and memory per node  
+16 cores 56GB      1 nodes  
+16 cores 72GB    11 nodes  
+16 cores 64GB    23 nodes  
+20 cores 128GB   7 nodes  
+
+For examples of running interactive jobs and of sample submission scripts, please see [jobs.md](https://github.com/elyssac02/singularity-on-hpc-henry2/blob/main/docs/jobs.md).
