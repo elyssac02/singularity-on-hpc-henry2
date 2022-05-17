@@ -33,3 +33,8 @@ If you receive some errors (e.g., 'error while loading shared libraries'), you m
  ```bash
  singularity exec --cleanenv /usr/local/usrapps/[hpcproject]/singularity_images/image.sif python test.py
  ```
+ 
+ If you want to read or write data to a specific directory within the container, then you need to use [bind mounts](https://sylabs.io/guides/3.0/user-guide/bind_paths_and_mounts.html):
+ ```bash
+  singularity exec --bind ${PWD}/inputs:/home/data/inputs --cleanenv /usr/local/usrapps/[hpcproject]/singularity_images/image.sif python test.py
+ ```
