@@ -40,7 +40,8 @@ singularity pull docker://pathto/dockerimage
 ```
 Note that `pull` will download the container and create the sif file and `build` does the same but names the sif file and has more options.
 
-Note that you can pull from Singularity Library or build from Dockerhub from Henry2, but you cannot create or modify the 'contents' of a Singularity image without having root permissions, so you need create or modify images (i.e., build the container itself) on some other computer on which you have root permissions.
+### Modifying contents in the image 
+You can pull from Singularity Library or build from Dockerhub from Henry2, but you cannot create or modify the 'contents' of a Singularity image without having root permissions, so you need create or modify images (i.e., build the container itself) on some other computer on which you have root permissions.
 
 If you need to modify the contents of the Singlarity image (e.g., code in a script), you will need to modify it on your personal computer, save the Docker image, then convert to Singularity on HPC:
 ```bash
